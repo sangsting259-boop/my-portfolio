@@ -3,26 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio của tôi</title>
+    <title>Trần Thanh Sang - Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="background-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
+        <div class="shape shape-1" data-speed="2"></div>
+        <div class="shape shape-2" data-speed="-3"></div>
     </div>
 
     <main class="container">
         <section class="glass-card profile-card">
             <div class="avatar-placeholder">TS</div>
-            <h1>Trần Thanh Sang</h1>
-            <p class="subtitle">Newbie Developer & Game Dev Enthusiast</p>
-            <p class="bio">Chào mừng đến với trang Portfolio cá nhân của tôi. Đang trên hành trình chinh phục lập trình web và phát triển game Unity!</p>
+            <h1>TRẦN THANH SANG</h1>
+            <p class="subtitle">Newbie Developer | Enthusiast in Web & Game Dev</p>
+            <p class="bio">Chào mừng đến với trang Portfolio của tôi. Tôi đang tìm hiểu về Web & Game Dev với Unity.</p>
             
             <div class="social-links">
-                <a href="https://github.com/sangsting259-boop" target="_blank" class="btn">GitHub</a>
+                <a href="https://github.com/sangsting259-boop" target="_blank" class="btn">Ghé thăm GitHub</a>
             </div>
         </section>
     </main>
+
+    <!-- Hiệu ứng di chuyển theo chuột -->
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 40;
+            const y = (e.clientY / window.innerHeight - 0.5) * 40;
+
+            const shapes = document.querySelectorAll(".shape");
+            shapes.forEach(shape => {
+                const speed = shape.getAttribute("data-speed");
+                shape.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
 </body>
 </html>
